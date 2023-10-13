@@ -31,11 +31,16 @@ const lookup = {
   ",": ",",
 };
 
-function rot13(Str) {
+function rot13(str) {
 	str= str.toUpperCase();
 let output = "";
 	for(let i=0 ; i< str.length ; i++){
+		if(lookup[str[i]]){
 		output= output + lookup[str[i]];
+		}
+		else{
+			output = output + str[i];
+		}
 	}
 	return output;
 }
